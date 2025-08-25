@@ -41,8 +41,7 @@ HLT
 5.	Subtract the content of B from A.
 6.	Store the result in memory location 4300H.
 
-### Program:
-LDA 4200H
+### Program:LDA 4200H
 MOV C, A
 LDA 4210H
 CMP C
