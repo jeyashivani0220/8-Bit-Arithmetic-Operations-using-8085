@@ -15,16 +15,9 @@ To perform 8-bit arithmetic operations such as addition, subtraction, multiplica
 5.	Store the sum in memory location 4300H.
    
 ### Program:
-LDA 4200H
-MOV B, A
-LDA 4210H
-ADD B
-STA 4300H
-JC STORE_CARRY
-HLT
-STORE_CARRY: MVI A, 01H
-STA 4301H
-HLT
+![MPMC](https://github.com/user-attachments/assets/b7c0db6b-1b51-4865-b347-cc08693cc9d7)
+
+
 
 ### Output:
 ![MPMC EXP 1g](https://github.com/user-attachments/assets/16443cfd-0b42-47a6-af44-d2f6555c9124)
@@ -41,17 +34,10 @@ HLT
 5.	Subtract the content of B from A.
 6.	Store the result in memory location 4300H.
 
-### Program:LDA 4200H
-MOV C, A
-LDA 4210H
-CMP C
-JC SWAP
-MOV B, A
-MOV A, C
-SWAP:
-SUB B
-STA 4300H
-HLT
+### Program :
+![MPMC1](https://github.com/user-attachments/assets/3fe1edea-4a82-4f41-9e45-e4a3e6ad0285)
+
+
 
 ### Output:
 ![MPMC EXP 1b](https://github.com/user-attachments/assets/75f15ce5-5e23-41d0-a2da-70253e353934)
@@ -66,16 +52,8 @@ HLT
 4.	Store the result in memory locations 4300H and 4301H (if required for higher bits).
 
 ### Program:
-LDA 4200H
-MOV C, A
-LDA 4210H
-MOV B, A
-MVI A, 00H
-LOOP: ADD C
-DCR B
-JNZ LOOP
-STA 4300H
-HLT
+ ![MPMC2](https://github.com/user-attachments/assets/04e9c5aa-89b7-4233-b8d3-b2eed49096d1)
+
 
 ### Output:
 ![MPMC EXP 1d](https://github.com/user-attachments/assets/e4a7cf0b-1e9e-4c58-9a8d-db5552b96da4)
@@ -93,23 +71,8 @@ HLT
 4.	Store the quotient in 4300H and remainder in 4301H.
 
 ### Program:
-LDA 4200H
-MOV C,A
-LDA 4201H
-MOV B,A
-MVI A,00H
-LOOP: MOV A,C
-CMP B
-JC END
-SUB B
-MOV C,A
-INR D
-JMP LOOP
-END: MOV A,D
-STA 4300H
-MOV A,C
-STA 4301H
-HLT
+![MPMC3](https://github.com/user-attachments/assets/9784a0d8-b69b-4e53-a238-158a559a816a)
+
 
 
 ### Output:
